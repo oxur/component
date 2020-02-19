@@ -1,0 +1,12 @@
+[package]
+name = "oxur-component"
+version = "0.1.0"
+description = "Enabling the creation of application components with lifecycle and dependency support"
+authors = ["Duncan McGreggor <oubiwann@gmail.com>"]
+edition = "2018"
+
+[lib]
+name = "component"
+
+[dependencies]
+petgraph = "0.5.0"
