@@ -2,6 +2,7 @@
 name = "oxur-component"
 version = "0.1.0"
 description = "Enabling the creation of application components with lifecycle and dependency support"
+license = "MIT"
 authors = ["Duncan McGreggor <oubiwann@gmail.com>"]
 edition = "2018"
 
