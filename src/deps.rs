@@ -1,6 +1,6 @@
 use petgraph::algo;
 use petgraph::graphmap::DiGraphMap;
-use crate::types::Component;
+use crate::Component;
 
 // The verb to use when thinking about the relationships between the dependency
 // vertices is "depends upon." A component will declare the things it depends
@@ -36,11 +36,7 @@ pub fn sort<'a>(g: &DiGraphMap<&'a str, String>) -> Vec<&'a str> {
                 .map(| item: &&str | *item)
                 .collect()
         },
-        Err(err) => {
-            panic!("Error: {:?}", err);
-            // g.node_weight(err.node_id()).map(|weight|
-            //     println!("Error: graph has cyclic dependency at {}", weight));
-        }
+        Err(e) => panic!("Cyclic dependency detected for {}", e.node_id()),
     }
 }
 
@@ -77,8 +73,7 @@ mod tests {
         ];
         add_components(&mut g, deps);
         println!("{:?}", g);
-        // match sort(&g) {
-        //     x => println!("Got {:?}", x),
-        // }
+        let sorted = sort(&g);
+        assert_eq!(*sorted.last().unwrap(), "myapp::components::comp1");
     }
 }

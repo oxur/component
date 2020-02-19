@@ -1,5 +1,5 @@
 use component::deps;
-use component::types::Component;
+use component::Component;
 use petgraph::dot::Dot;
 use petgraph::Directed;
 use petgraph::graphmap::GraphMap;
@@ -43,13 +43,5 @@ fn main() {
     for comp in deps::sort(&g) {
         println!("{}", comp);
     }
-    // match deps::sort(&g) {
-    //     indices => {
-    //         for ni in indices.iter() {
-    //             println!("Got {:?}", ni);
-    //             println!("{:?}", g.get(ni.index()));
-    //         }
-    //     }
-    // }
     println!("Dot language format:\n\n{}", Dot::new(&g));
 }
