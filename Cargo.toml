@@ -1,6 +1,6 @@
 [package]
 name = "oxur-component"
-version = "0.1.1"
+version = "0.1.2"
 description = "Enabling the creation of application components with lifecycle and dependency support"
 readme = "README.md"
 license = "MIT"
@@ -9,6 +9,7 @@ repository = "https://github.com/oxur/component"
 documentation = "https://docs.rs/oxur-component/"
 categories = ["development-tools"]
 keywords = ["components", "dependencies", "dependency-injection", "systems"]
+exclude = ["/.github", "/resources", ".gitignore"]
 edition = "2018"
 
 [lib]
