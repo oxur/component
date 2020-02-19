@@ -5,7 +5,6 @@ use petgraph::Directed;
 use petgraph::graphmap::GraphMap;
 
 fn main() {
-    // let mut g = Graph::new();
     let mut g = GraphMap::<&str, String, Directed>::new();
     let deps = vec![
         Component{

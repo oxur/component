@@ -26,7 +26,6 @@ pub fn add_components(g: &mut DiGraphMap<&str, String>, cs: Vec<Component>) {
     }
 }
 
-// pub fn sort<'a>(g: &DiGraph<&str, String>) -> Vec<NodeIndex> {
 pub fn sort<'a>(g: &DiGraphMap<&'a str, String>) -> Vec<&'a str> {
     match algo::toposort(g, Option::None) {
         Ok(sorted) => {
@@ -39,6 +38,10 @@ pub fn sort<'a>(g: &DiGraphMap<&'a str, String>) -> Vec<&'a str> {
         Err(e) => panic!("Cyclic dependency detected for {}", e.node_id()),
     }
 }
+
+//*************************************************************************//
+//*   Tests   *************************************************************//
+//*************************************************************************//
 
 #[cfg(test)]
 mod tests {
