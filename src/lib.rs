@@ -1,9 +1,9 @@
+pub use self::component::*;
 pub use self::deps::*;
+pub use self::registry::*;
+pub use self::system::*;
 
+pub mod component;
 pub mod deps;
-
-#[derive(Debug)]
-pub struct Component {
-    pub name: &'static str,
-    pub dependencies: Vec<&'static str>,
-}
+pub mod registry;
+pub mod system;

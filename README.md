@@ -9,10 +9,30 @@
 
 *Enabling the creation of application components with lifecycle and dependency support*
 
+## WARNING
+
+This project was only started recently and is in the early stages of
+development. See the [Github issues](https://github.com/oxur/component/issues)
+for current status.
+
+## About
+
+This library address the same problem space (level of control and similar
+functionality) as the little-known Erlang
+[application start phase capability](http://erlang.org/doc/apps/kernel/application.html#Module:start_phase-3)
+and the popular Clojure 
+[Components library](https://github.com/stuartsierra/component).
+
+## Usage
+
+Very TBD ...
+
 ## Credits
 
-Logo is derived from the [small-n-flat](https://github.com/paomedia/small-n-flat)
-icon set. Font used is [Bungee Hairline](https://fonts.google.com/specimen/Bungee+Hairline).
+The project logo is derived from the "component" logo in the
+[small-n-flat](https://github.com/paomedia/small-n-flat) icon set.
+The font used in the logo textual overlays is slightly modifed from
+[Bungee Hairline](https://fonts.google.com/specimen/Bungee+Hairline).
 
 ## License
 
