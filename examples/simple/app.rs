@@ -1,4 +1,4 @@
-// use super::components::system;
+use std::process;
 
 #[derive(Debug, Clone)]
 pub struct App {
@@ -16,7 +16,8 @@ impl App {
         self.system.start()
     }
 
-    pub fn stop(&self) {
-        self.system.stop()
+    pub fn stop(&self, exit: i32) {
+        self.system.stop();
+        process::exit(exit);
     }
 }
