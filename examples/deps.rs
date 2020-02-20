@@ -37,10 +37,10 @@ fn main() {
         },
     ];
     deps::add_components(&mut g, deps);
-    println!("{:?}\n", g);
-    println!("Sorted:");
+    println!("\nGraph struct:\n\n{:?}\n", g);
+    println!("Sorted deps:\n");
     for comp in deps::sort(&g) {
         println!("{}", comp);
     }
-    println!("Dot language format:\n\n{}", Dot::new(&g));
+    println!("\nDot language format:\n\n{}", Dot::new(&g));
 }

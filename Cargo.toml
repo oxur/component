@@ -17,3 +17,6 @@ name = "component"
 
 [dependencies]
 petgraph = "0.5.0"
+
+[[example]]
+name = "deps"
