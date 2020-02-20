@@ -1,14 +1,15 @@
 use std::process;
+use super::components::system::System;
 
 #[derive(Debug, Clone)]
 pub struct App {
-    system: super::components::system::System,
+    system: System,
 }
 
 impl App {
     pub fn init() -> App {
         App {
-            system: super::components::system::System::new(),
+            system: System::new(),
         }
     }
 
