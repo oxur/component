@@ -1,6 +1,6 @@
+use crate::Component;
 use petgraph::algo;
 use petgraph::graphmap::DiGraphMap;
-use crate::Component;
 
 // The verb to use when thinking about the relationships between the dependency
 // vertices is "depends upon." A component will declare the things it depends
@@ -28,38 +28,32 @@ pub fn add_components(g: &mut DiGraphMap<&str, String>, cs: Vec<Component>) {
 
 pub fn sort<'a>(g: &DiGraphMap<&'a str, String>) -> Vec<&'a str> {
     match algo::toposort(g, Option::None) {
-        Ok(sorted) => {
-            sorted
-                .iter()
-                .rev()
-                .map(| item: &&str | *item)
-                .collect()
-        },
+        Ok(sorted) => sorted.iter().rev().map(|item: &&str| *item).collect(),
         Err(e) => panic!("Cyclic dependency detected for {}", e.node_id()),
     }
 }
 
-//*************************************************************************//
-//*   Tests   *************************************************************//
-//*************************************************************************//
+// *********************************************************************** //
+// ***   Tests   ********************************************************* //
+// *********************************************************************** //
 
 #[cfg(test)]
 mod tests {
-    use petgraph::Directed;
-    use petgraph::graphmap::GraphMap;
     use super::*;
+    use petgraph::graphmap::GraphMap;
+    use petgraph::Directed;
 
     #[test]
     fn new_test() {
         let mut g = GraphMap::<&str, String, Directed>::new();
         let deps = vec![
-            Component{
+            Component {
                 name: "myapp::components::comp1",
                 dependencies: vec![
                     "myapp::components::comp2",
                     "myapp::components::comp3",
                     "myapp::components::comp4",
-                ]
+                ],
             },
             Component {
                 name: "myapp::components::comp4",
