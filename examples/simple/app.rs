@@ -1,5 +1,5 @@
-use std::process;
 use super::components::system::System;
+use std::process;
 
 #[derive(Debug, Clone)]
 pub struct App {
